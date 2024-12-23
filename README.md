@@ -9,3 +9,7 @@ This is a simple calculator website that can be used to perform basic arithmetic
 - Multiplication
 - Division
 - Modulus
+
+## Link to the website
+
+[Calculator IP Website](https://calculatorip.onrender.com/)
