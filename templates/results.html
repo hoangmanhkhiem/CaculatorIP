@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnet Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Subnet Calculation Results</h1>
+    <table>
+        <caption>Subnet Details</caption>
+        <thead>
+            <tr>
+                <th>Subnet Name</th>
+                <th>Network Address</th>
+                <th>Broadcast Address</th>
+                <th>First Usable IP</th>
+                <th>Last Usable IP</th>
+                <th>Wasted IPs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name, details in results.items() %}
+            <tr>
+                <td>{{ name }}</td>
+                <td>{{ details['Network Address'] }}</td>
+                <td>{{ details['Broadcast Address'] }}</td>
+                <td>{{ details['First Usable IP Address'] }}</td>
+                <td>{{ details['Last Usable IP Address'] }}</td>
+                <td>{{ details['Number of Wasted IP'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="button-container">
+        <button onclick="window.history.back();">Back</button>
+    </div>
+</body>
+</html>
